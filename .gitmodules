@@ -1,0 +1,6 @@
+[submodule "src/submodule/user-entities"]
+	path = src/submodule/user-entities
+	url = git@github.com:riteshwari-ganjare/user-entities.git
+[submodule "src/submodule/dtos"]
+	path = src/submodule/dtos
+	url = git@github.com:riteshwari-ganjare/dtos.git
