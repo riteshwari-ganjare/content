@@ -4,3 +4,6 @@
 [submodule "src/submodule/dtos"]
 	path = src/submodule/dtos
 	url = git@github.com:riteshwari-ganjare/dtos.git
+[submodule "src/submodule/rmq"]
+	path = src/submodule/rmq
+	url = git@github.com:riteshwari-ganjare/rmq.git
