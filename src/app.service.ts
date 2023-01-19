@@ -8,6 +8,7 @@ import { MsgBrokerOpsService } from './submodule/rmq/src/module/msg-broker-ops/m
 
 @Injectable()
 export class AppService {
+  [x: string]: any;
   constructor(
     @Inject('CONTENT_SERVICE_QUEUE') private contentQueueClient: ClientProxy,
 
@@ -35,19 +36,19 @@ export class AppService {
     
   }
 
-  // async createContent(content: ContentDto){
-  //   console.log("Proceeding to create content")
-  //   let rmqPayload: RMQPayloadDto = {
-  //     event: PlatformEvents.CONTENT_CREATION,
-  //     payload: content
-  //   }
+  async createContent(content: ContentDto){
+    console.log("Proceeding to create content")
+    let rmqPayload: RMQPayloadDto = {
+      event: PlatformEvents.CONTENT_CREATION,
+      payload: content
+    }
 
-  //   this.msgBrokerService.emitToQueue(
-  //     rmqPayload,
-  //     RmqTopics.CONTENT_CREATION_TOPIC,
-  //     this.contentQueueClient
-  //   )
+    this.msgBrokerService.emitToQueue(
+      rmqPayload,
+      RmqTopics.CONTENT_CREATION_TOPIC,
+      this.contentQueueClient
+    )
     
-  //   return "Your request has been accepted !!"
-  // }
+    return "Your request has been accepted "
+  }
 }

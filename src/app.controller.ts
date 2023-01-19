@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
+import { ContentDto } from './submodule/dtos/src/dto/content.dto';
 
 @Controller()
 export class AppController {
@@ -8,5 +9,17 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Post()
+  async createContent(@Body()content: ContentDto){     // dtos -> data
+     try{
+       let createdContent = await this.appService.createContent(content);
+       return createdContent;
+     }
+     catch(err){
+       console.log(err);
+       return err;
+     } 
   }
 }
