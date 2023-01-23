@@ -22,7 +22,7 @@ import { User } from './submodule/user-entities/src/entities/user.entity';
       database: 'social-app-db',
       entities: [User,Content],
       synchronize: true,
-      logging:true,
+      logging:true
      
     }),
     ClientsModule.register([

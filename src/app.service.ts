@@ -17,7 +17,7 @@ export class AppService {
 
   getHello(): string {
 
-    // console.log("Step 2")
+    console.log("Step 2")
     
     let rmqPayload: RMQPayloadDto = {
       event: PlatformEvents.CONTENT_CREATION,

@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+
 import { AppService } from './app.service';
 import { ContentDto } from './submodule/dtos/src/dto/content.dto';
 
@@ -8,6 +9,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log("step 1")
     return this.appService.getHello();
   }
 
