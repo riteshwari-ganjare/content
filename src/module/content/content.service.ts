@@ -56,34 +56,34 @@ export class ContentService {
         }
       }
     
-    //   async findAll(){
-    //     try{
-    //       let retrievedContents = await this.contentRepository.find();
-    //       return retrievedContents;
-    //     }
-    //     catch(err){
-    //       throw err
-    //     }
-    //   }
+      async findAll(){
+        try{
+          let retrievedContents = await this.contentRepository.find();
+          return retrievedContents;
+        }
+        catch(err){
+          throw err
+        }
+      }
     
-    //   async updateContent(Content: ContentDto){
-    //     try{
-    //       let updateResult = await this.contentRepository.update(Content.id,Content);
-    //       return updateResult;
-    //     }
-    //     catch(err){
-    //       throw err
-    //     }
-    //   }
+      async updateContent(Content: ContentDto){
+        try{
+          let updateResult = await this.contentRepository.update(Content.id,Content);
+          return updateResult;
+        }
+        catch(err){
+          throw err
+        }
+      }
     
-    //   async deleteContent(ContentId: number){
-    //     try{
-    //       let deletedContent = await this.contentRepository.delete(ContentId);
-    //       return deletedContent;
-    //     }
-    //     catch(err){
-    //       throw err
-    //     }
-    //   }
+      async deleteContent(ContentId: number){
+        try{
+          let deletedContent = await this.contentRepository.delete(ContentId);
+          return deletedContent;
+        }
+        catch(err){
+          throw err
+        }
+      }
  
 }
